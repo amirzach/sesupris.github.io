@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Dyah Deshanty ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #ffd1dc, #fff0f5);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #ff4081;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            margin: 20px;
+            position: relative;
+        }
+
+        .heart {
+            font-size: 80px;
+            animation: pulse 1.5s infinite;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff4081, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+
+        .message {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        .button {
+            background: linear-gradient(45deg, #ff4081, #ff69b4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .button:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+        }
+
+        .pet {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+
+        .pet-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pet img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .heart-meter {
+            width: 80%;
+            height: 20px;
+            background: #ffe6ee;
+            border-radius: 10px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .heart-progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff4081, #ff69b4);
+            transition: width 0.5s;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .flower {
+            font-size: 40px;
+            position: absolute;
+            animation: sway 3s infinite;
+            opacity: 0.7;
+        }
+
+        .flower:nth-child(1) { left: 10px; top: 10px; }
+        .flower:nth-child(2) { right: 10px; top: 10px; }
+        .flower:nth-child(3) { left: 10px; bottom: 10px; }
+        .flower:nth-child(4) { right: 10px; bottom: 10px; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        .envelope {
+            font-size: 24px;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .envelope:hover {
+            transform: scale(1.1);
+        }
+
+        .love-note {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+            transform: rotate(-2deg);
+            font-family: cursive;
+        }
+
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            animation: sparkle 1s forwards;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            100% { transform: scale(1) rotate(180deg); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .button {
+                padding: 20px 35px;
+                font-size: 20px;
+            }
+            
+            .pet {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .envelope {
+                font-size: 32px;
+            }
+            
+            .heart {
+                font-size: 90px;
+            }
+        }
+        
+        .button:active {
+            transform: scale(0.95);
+        }
+        
+        .pet:active img {
+            transform: scale(0.9);
+        }        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flower">🌸</div>
+        <div class="flower">🌺</div>
+        <div class="flower">🌸</div>
+        <div class="flower">🌺</div>
+        
+        <div class="heart" onclick="addSparkles(event)">❤️</div>
+        <h1>Happy Valentine's Day!</h1>
+        <div class="name">Dyah Deshanty</div>
+        
+        <div class="pet-container">
+            <div class="pet" ontouchstart="petKitty()" onclick="petKitty()">
+                <img src="https://placekitten.com/200/200" alt="Cute Kitty" />
+            </div>
+            <div class="heart-meter">
+                <div class="heart-progress" id="heartProgress"></div>
+            </div>
+            <div id="petMessage">Pet me! ✨</div>
+        </div>
+
+        <div class="envelope" onclick="toggleLoveNote()">💌</div>
+        <div id="loveNote" class="love-note hidden">
+            Dear Dyah,
+            You're the sweetest person I know! 
+            You make every day special just by being you. 
+            Click the heart above to see more magic! ✨
+        </div>
+
+        <button class="button" onclick="showSurprise()">Open Your Valentine's Surprise! 🎀</button>
+        
+        <div id="surprise" class="message hidden">
+            Dyah Deshanty,
+            You light up my world with your beautiful smile! 🌟
+            Every moment with you is pure magic. ✨
+            You're the most precious gift in my life. 🎀
+            I love you more and more each day! 💝
+        </div>
+    </div>
+
+    <script>
+        let petCount = 0;
+        const maxPets = 10;
+
+        function petKitty() {
+            petCount = Math.min(petCount + 1, maxPets);
+            const progress = (petCount / maxPets) * 100;
+            document.getElementById('heartProgress').style.width = progress + '%';
+            
+            const messages = [
+                "Purrrr! 😊",
+                "I love pets! 💕",
+                "More please! 🐱",
+                "You're the best! ✨",
+                "So happy! 💝"
+            ];
+            
+            document.getElementById('petMessage').textContent = messages[Math.floor(Math.random() * messages.length)];
+            
+            if (petCount === maxPets) {
+                createFloatingHearts();
+                document.getElementById('petMessage').textContent = "Maximum love achieved! 💖";
+            }
+        }
+
+        function toggleLoveNote() {
+            const loveNote = document.getElementById('loveNote');
+            loveNote.classList.toggle('hidden');
+        }
+
+        function addSparkles(event) {
+            for (let i = 0; i < 5; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.innerHTML = '✨';
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (event.pageX - 10) + 'px';
+                sparkle.style.top = (event.pageY - 10) + 'px';
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        }
+
+        function showSurprise() {
+            const surprise = document.getElementById('surprise');
+            surprise.classList.remove('hidden');
+            createFloatingHearts();
+        }
+
+        function createFloatingHearts() {
+            const emojis = ['❤️', '💖', '💝', '💕', '💗', '🌸', '✨', '💌'];
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                    heart.style.animation = `float ${Math.random() * 3 + 2}s linear forwards`;
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => heart.remove(), 5000);
+                }, i * 200);
+            }
+        }
+
+            // Add touch event listeners for better mobile support
+            document.addEventListener('DOMContentLoaded', function() {
+                const elements = {
+                    heart: document.querySelector('.heart'),
+                    envelope: document.querySelector('.envelope'),
+                    pet: document.querySelector('.pet'),
+                    button: document.querySelector('.button')
+                };
+    
+                // Add both touch and click events for all interactive elements
+                Object.entries(elements).forEach(([key, element]) => {
+                    if (element) {
+                        element.addEventListener('touchstart', function(e) {
+                            e.preventDefault(); // Prevent double-firing on mobile
+                            switch(key) {
+                                case 'heart':
+                                    addSparkles(e);
+                                    break;
+                                case 'envelope':
+                                    toggleLoveNote();
+                                    break;
+                                case 'pet':
+                                    petKitty();
+                                    break;
+                                case 'button':
+                                    showSurprise();
+                                    break;
+                            }
+                        });
+                    }
+                });
+            });    
+
+        // Add initial floating animations
+        setTimeout(createFloatingHearts, 1000);
+    </script>
+</body>
+</html>
